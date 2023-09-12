@@ -1,0 +1,197 @@
+// Отвечает за адаптивность сайта на разных устройствах, разрешениях
+
+@media (max-width: 1200px)
+    .menu
+        &_item
+            padding-right: 20px
+        &_link
+            font-size: 13px
+
+    .promo
+        &_header
+            font-size: 50px
+
+    .reasons
+        &_block
+            align-items: flex-start
+        &_descr
+            width: 300px
+
+// Второй размер разрешений для экранов меньше
+
+@media (max-width: 991px)
+    .menu
+        &_item
+            padding-right: 8px
+        &_link
+            font-size: 10px
+
+    .promo
+        &_header
+            font-size: 40px
+        &_subheader
+            font-size: 30px
+        &_descr
+            font-size: 16px
+        &_btn
+            height: 54px
+            width: 221px
+
+    .subheader
+        &_logo
+            img
+                width: 100%
+        &_official
+            font-size: 12px
+        &_phone
+            font-size: 21px
+        &_btn
+            font-size: 13px
+            width: 148px
+            height: 40px
+            margin-top: 23px 
+            margin-left: 96px
+
+    .reasons
+        &_block
+            flex-direction: column
+            align-items: center
+        &_descr
+            width: 300px
+            margin-top: 20px
+
+//Третий для еще более мелких размеров экрана
+@media (max-width: 767px)
+    .menu
+        position: fixed
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        top: 0
+        left: -100%
+        width: 50%
+        height: 100vh
+        padding: 20px 15px
+        background-color: rgba(0,0,0, .8)
+        transition: .6s all
+        &_active
+            left: 0
+            
+        &_item
+            padding-right: 0
+            border: none
+            margin: 10px 0
+        &_link
+            font-size: 20px
+
+    .hamburger
+        display: block
+        position: absolute
+        right: 10px
+        top: 50%
+        transform: translateY(-50%)
+        width: 26px
+        height: 12px
+        span
+            display: block
+            height: 2px
+            width: 100%
+            background-color: #fff
+            margin-bottom: 2px
+
+            // Всегда добавляем transition анимацию для самих элементов, ведь они и будет трансформироваться.
+            transition: .6s all
+
+        &_active
+            span
+                margin-bottom: -2px
+                &:nth-child(1)
+                    transform: translateY(3px) rotate(-45deg)
+                &:nth-child(2)
+                    display: none
+                &:nth-child(3)
+                    transform: translateY(3px) rotate(45deg)
+    .xs-hidden
+        display: none
+    .xs-visible
+        display: block
+
+        .subheader
+            &_phone
+                display: block
+                margin-top: 10px
+                color: #FFF
+                text-align: center
+                font-size: 16px
+                font-weight: 400
+                text-transform: uppercase
+                text-align: center
+
+            // Многие элементы сломаны при адаптации. Для телефонов боковое меню слишком большое и мешает.
+            // Сбоку вылазит полоска header и непонятно что с этим делать. Ссылка намера телефона вообще съехала.
+            // Но все эти проблемы произошли только при адаптации. Мой первый проект и в нем куча ошибок. 9.11.2023
+                
+
+            // Чтобы решить проблему с номером телефона, который находится справа - можно удалить для subheader_phone
+            // значение text-aligh: right , тогда номер прелепится к кнопке, но моя проблема скорее в том, что сама
+            // кнопка не прилеплена к правому боку. Мне нужено изменить не номер, а сам btn.
+
+            &_btn
+                display: block
+                width: 200px
+                height: 40px  
+                margin: 0 auto
+    .promo
+        &_header
+            font-size: 38px
+            line-height: 42px
+        &_subheader
+            font-size: 25px
+        &_btn
+            height: 46px
+            width: 208px
+
+@media (max-width: 575px)
+    .promo
+        min-height: 400px
+        &_header
+            font-size: 25px
+            line-height: 30px
+        &_subheader
+            font-size: 20px
+        &_descr
+            display: none
+    .subheader
+        &_official
+            height: 60px
+            display: none
+        &_logo
+            margin-top: 27px
+        &_phone
+            font-size: 15px
+            margin-top: 17px
+        &_btn
+            font-size: 12px
+            width: 122px
+            height: 28px
+            margin-left: 20px
+            margin-top: 9px
+    .title
+        font-size: 25px
+    .reasons
+        &_round
+            margin-right: -4px
+    .menu
+        width: 70%
+    .reasons
+        padding: 22px 0
+
+    .choice
+        &_img
+            width: 300px
+            height: 200px
+
+
+
+
+                
